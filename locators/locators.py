@@ -7,9 +7,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class My_Locators():
-    driver_path  = "/Users/luisfranciscocontrerasgonzalez/Documents/QAMinds/drivers/chromedriver"
+    driver_path  = "/Users/luisfranciscocontrerasgonzalez/Documents/selenium_with_python_practice/drivers/chromedriver"
     url = "https://demo.guru99.com/test/newtours/index.php"
-    root_excel = "/Users/luisfranciscocontrerasgonzalez/Documents/QAMinds/data/Test_Matrix.xlsx"
+    root_excel = "/Users/luisfranciscocontrerasgonzalez/Documents/selenium_with_python_practice/data/Test_Matrix.xlsx"
 
     # Main Page
 
