@@ -6,12 +6,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+# Aqui se importan los Locators
 from locators.locators import My_Locators
 
+# Aqui se importan los Test Cases
 from test_cases.TC_1 import TC_1
 
-# Aqui se importan los Test Cases
-# Aqui se importan los Locators
 
 """
 
