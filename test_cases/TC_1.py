@@ -36,7 +36,8 @@ class TC_1():
             else:
                 pass
 
-
+    
+    def Test_001(self):
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
