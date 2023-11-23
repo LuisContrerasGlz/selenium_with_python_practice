@@ -15,6 +15,7 @@ class TC_1():
 
     def __init__(self, driver):
         self.driver = driver
+        self.root_excel = pd.read_excel(My_Locators.root_excel, engine="openpyxl")
         self.name_user_name = My_Locators.name_user_name
         self.name_user_password = My_Locators.name_user_password
         self.name_login_button = My_Locators.name_login_button
