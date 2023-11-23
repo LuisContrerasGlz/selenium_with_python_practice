@@ -21,6 +21,22 @@ class TC_1():
         self.name_login_button = My_Locators.name_login_button
 
     def start(self):
+        # iloc[R][C] - Leer
+        # loc[R, C] -Escribir
+        global i
+        for i in range(len(self.root_excel)):
+            if self.root_excel.iloc[i]["Y/N"] == "Y":
+                method_name = self.root_excel.iloc[i]["Nombre"]
+                try:
+                    test_method = getattr(TC_1, method_name)
+                except AttributeError:
+                    print("ERROR!")
+                
+                test_method(self)
+            else:
+                pass
+
+
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
