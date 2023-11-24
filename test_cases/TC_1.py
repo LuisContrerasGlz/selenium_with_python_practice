@@ -42,8 +42,8 @@ class TC_1():
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
 
-        self.driver.find_element(By.NAME, My_Locators.name_user_name).send_keys("Luis")
-        self.driver.find_element(By.NAME, My_Locators.name_user_password).send_keys("1234abcd")
+        self.driver.find_element(By.NAME, My_Locators.name_user_name).send_keys(self.root_excel.iloc[i]["Username"])
+        self.driver.find_element(By.NAME, My_Locators.name_user_password).send_keys(self.root_excel.iloc[i]["Password"])
         self.driver.find_element(By.NAME, My_Locators.name_login_button).click()
         print("login!")
 
