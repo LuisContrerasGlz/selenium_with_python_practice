@@ -6,16 +6,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Aqui se importan los Locators
+# Locators import
 from locators.locators import My_Locators
 
-# Aqui se importan los Test Cases
+# Test Cases import
 from test_cases.TC_1 import TC_1
 
 
 """
 
-Se divide en 3 fases:
+It gets divided into 3 main phases:
 
 1) setUpClass
 2) test_name
