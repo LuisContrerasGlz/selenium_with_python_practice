@@ -19,6 +19,8 @@ class TC_1():
         self.name_user_name = My_Locators.name_user_name
         self.name_user_password = My_Locators.name_user_password
         self.name_login_button = My_Locators.name_login_button
+        self.xpath_login_message = My_Locators.xpath_login_message
+        self.xpath_signoff_button = My_Locators.xpath_signoff_button
 
     def start(self):
         # iloc[R][C] - Leer
@@ -43,8 +45,17 @@ class TC_1():
         self.driver.implicitly_wait(5)
 
         self.driver.find_element(By.NAME, My_Locators.name_user_name).send_keys(self.root_excel.iloc[i]["Username"])
-        self.driver.find_element(By.NAME, My_Locators.name_user_password).send_keys(self.root_excel.iloc[i]["Password"])
+        self.driver.find_element(By.NAME, My_Locators.name_user_password).send_keys(str(self.root_excel.iloc[i]["Password"]))
         self.driver.find_element(By.NAME, My_Locators.name_login_button).click()
+
+        message = WebDriverWait(self.driver, 30).until(
+            EC.visibility_of_element_located((By.XPATH, self.xpath_login_message))
+        )
+
+        print(self.xpath_login_message)
+        self.driver.find_element(By.XPATH, self.xpath_signoff_button).click()
+        self.driver.implicitly_wait(5)
+
         print("login!")
 
 

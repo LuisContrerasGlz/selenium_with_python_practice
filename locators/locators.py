@@ -16,5 +16,7 @@ class My_Locators():
     name_user_name = "userName"
     name_user_password = "password"
     name_login_button = "submit"
+    xpath_login_message = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h3"
+    xpath_signoff_button = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[1]/a"
 
 
