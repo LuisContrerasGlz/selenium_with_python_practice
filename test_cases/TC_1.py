@@ -53,6 +53,8 @@ class TC_1():
         )
 
         print(self.xpath_login_message)
+
+        
         self.driver.find_element(By.XPATH, self.xpath_signoff_button).click()
         self.driver.implicitly_wait(5)
 
