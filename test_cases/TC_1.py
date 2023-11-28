@@ -45,6 +45,7 @@ class TC_1():
 
         # DataFrane
         df = pd.DataFrame(columns=self.list_columns)
+        int_current_row = 2
 
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
@@ -58,7 +59,10 @@ class TC_1():
             message = WebDriverWait(self.driver, 30).until(
                 EC.visibility_of_element_located((By.XPATH, self.xpath_login_message))
             )
+
             print("Message 2: ", str(message.text))
+
+            df.loc[int_current_row, "Message"] = message.text
         except TimeoutException as toe:
             print("Error: ", toe)
 
@@ -66,7 +70,13 @@ class TC_1():
         self.driver.find_element(By.XPATH, self.xpath_signoff_button).click()
         self.driver.implicitly_wait(5)
 
+        int_current_row += 1
+
         print("login!")
+
+        print(df)
+
+        df.to_excel("/Users/luisfranciscocontrerasgonzalez/Documents/selenium_with_python_practice/evidence/catalog.xlsx")
 
 
 
