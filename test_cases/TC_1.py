@@ -21,6 +21,7 @@ class TC_1():
         self.name_login_button = My_Locators.name_login_button
         self.xpath_login_message = My_Locators.xpath_login_message
         self.xpath_signoff_button = My_Locators.xpath_signoff_button
+        self.list_columns = My_Locators.list_columns
 
     def start(self):
         # iloc[R][C] - Leer
@@ -42,7 +43,8 @@ class TC_1():
     def Test_001(self):
         print("TC: ", self.root_excel.iloc[i]["ID Test"])
 
-        
+        # DataFrane
+        df = pd.DataFrame(columns=self.list_columns)
 
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
@@ -52,9 +54,13 @@ class TC_1():
         self.driver.find_element(By.NAME, My_Locators.name_user_password).send_keys(str(self.root_excel.iloc[i]["Password"]))
         self.driver.find_element(By.NAME, My_Locators.name_login_button).click()
 
-        message = WebDriverWait(self.driver, 30).until(
-            EC.visibility_of_element_located((By.XPATH, self.xpath_login_message))
-        )
+        try:
+            message = WebDriverWait(self.driver, 30).until(
+                EC.visibility_of_element_located((By.XPATH, self.xpath_login_message))
+            )
+            print("Message 2: ", str(message.text))
+        except TimeoutException as toe:
+            print("Error: ", toe)
 
         print(self.xpath_login_message)
         self.driver.find_element(By.XPATH, self.xpath_signoff_button).click()
