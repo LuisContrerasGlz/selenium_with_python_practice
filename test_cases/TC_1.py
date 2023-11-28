@@ -40,6 +40,8 @@ class TC_1():
 
     
     def Test_001(self):
+        print("TC: ", self.root_excel.iloc[i]["ID Test"])
+
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
@@ -53,8 +55,6 @@ class TC_1():
         )
 
         print(self.xpath_login_message)
-
-        
         self.driver.find_element(By.XPATH, self.xpath_signoff_button).click()
         self.driver.implicitly_wait(5)
 
