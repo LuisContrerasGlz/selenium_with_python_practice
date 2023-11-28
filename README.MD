@@ -1,6 +1,6 @@
 # Selenium with Python automation practice
 
-Basic testing with Selenium webdriver and python and pytest working with data parameters from excel.
+Basic testing with Selenium webdriver and python, pytest and pandas working with data parameters from excel.
 
 With reports to evidence capture.
 

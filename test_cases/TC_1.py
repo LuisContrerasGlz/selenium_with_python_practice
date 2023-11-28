@@ -42,6 +42,8 @@ class TC_1():
     def Test_001(self):
         print("TC: ", self.root_excel.iloc[i]["ID Test"])
 
+        
+
         self.driver.get(My_Locators.url)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
